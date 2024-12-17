@@ -1,0 +1,5 @@
+#!/bin/bash
+
+SOURCE_FILE="${1:-Main.cpp}"
+
+g++ -fsanitize=undefined -Wall -I./ $SOURCE_FILE

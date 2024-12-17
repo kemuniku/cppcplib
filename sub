@@ -1,0 +1,5 @@
+#/usr/bin/bash
+
+SOURCE_FILE="${1:-Main.cpp}"
+
+python3 expander.py $SOURCE_FILE && ./rc combined.cpp && oj t && oj s combined.cpp -y
