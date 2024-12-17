@@ -129,5 +129,39 @@ template <typename T> ostream &operator<<(ostream &os, const multiset<T> &st) { 
 template <typename T> ostream &operator<<(ostream &os, const unordered_set<T> &st) { ll cnt = 0; for (auto &e : st) { os << e << (++cnt != (int)st.size() ? " " : ""); } return os; }
 template <typename T> ostream &operator<<(ostream &os, deque<T> q) { while (q.size()) { os << q.front(); q.pop_front(); if (q.size()) os << " "; } return os; }
 template <class T, class Container, class Compare> ostream &operator<<(ostream &os, priority_queue<T, Container, Compare> pq) { while (pq.size()) { os << pq.top() << " "; pq.pop(); } return os; }
-#define out(x) cout << x << endl
 #define dout(x) cout << fixed << setprecision(10) << x << endl
+
+#define rep1(n) for(ll dummy_iter = 0LL; dummy_iter < n; ++dummy_iter) // 0,1,...,n-1
+#define rep2(i, n) for(ll i = 0LL, i##_counter = 0LL; i##_counter < ll(n); ++(i##_counter), (i) = i##_counter) // i=0,1,...,n-1
+#define rep3(i, s, t) for(ll i = ll(s), i##_counter = ll(s); i##_counter < ll(t); ++(i##_counter), (i) = (i##_counter)) // i=s,s+1,...,t-1
+#define rep4(i, s, t, step) for(ll i##_counter = step > 0 ? ll(s) : -ll(s), i##_end = step > 0 ? ll(t) : -ll(t), i##_step = abs(step), i = ll(s); i##_counter < i##_end; i##_counter += i##_step, i = step > 0 ? i##_counter : -i##_counter) // i=s,s+step,...,<t
+
+#define read1(a) cin >> a;
+#define read2(a, b) cin >> a >> b;
+#define read3(a, b, c) cin >> a >> b >> c;
+#define read4(a, b, c, d) cin >> a >> b >> c >> d;
+#define read5(a, b, c, d, e) cin >> a >> b >> c >> d >> e;
+#define read6(a, b, c, d, e, f) cin >> a >> b >> c >> d >> e >> f;
+#define read7(a, b, c, d, e, f, g) cin >> a >> b >> c >> d >> e >> f >> g;
+#define read8(a, b, c, d, e, f, g, h) cin >> a >> b >> c >> d >> e >> f >> g >> h;
+
+#define overload_read(a, b, c, d, e, f, g, h, i, ...) i
+#define read(...) overload_read(__VA_ARGS__,read8,read7,read6,read5,read4,read3,read2,read1)(__VA_ARGS__)
+
+#define inner_output1(a) cout << a << endl;
+#define inner_output2(a, b) cout << a << " " << b << endl;
+#define inner_output3(a, b, c) cout << a << " " << b << " " << c << endl;
+#define inner_output4(a, b, c, d) cout << a << " " << b << " " << c << " " << d << endl;
+#define inner_output5(a, b, c, d, e) cout << a << " " << b << " " << c << " " << d << " " << e << endl;
+#define inner_output6(a, b, c, d, e, f) cout << a << " " << b << " " << c << " " << d << " " << e << " " << f << endl;
+#define inner_output7(a, b, c, d, e, f, g) cout << a << " " << b << " " << c << " " << d << " " << e << " " << f << " " << g << endl;
+#define inner_output8(a, b, c, d, e, f, g, h) cout << a << " " << b << " " << c << " " << d << " " << e << " " << f << " " << g << " " << h << endl;
+
+#define overload_inner_output(a, b, c, d, e, f, g, h, i, ...) i
+#define out(...) overload_inner_output(__VA_ARGS__,inner_output8,inner_output7,inner_output6,inner_output5,inner_output4,inner_output3,inner_output2,inner_output1)(__VA_ARGS__)
+
+#define II(...) ll __VA_ARGS__; read(__VA_ARGS__)
+#define SI(...) string __VA_ARGS__; read(__VA_ARGS__)
+#define CI(...) char __VA_ARGS__; read(__VA_ARGS__)
+#define DI(...) double __VA_ARGS__; read(__VA_ARGS__)
+#define LI(name,size); vector<ll> name(size); read(name)
