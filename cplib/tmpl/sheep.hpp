@@ -52,7 +52,7 @@ struct Nyan { Nyan() { cin.tie(nullptr); ios::sync_with_stdio(false); cout << fi
 // uniq: 重複削除、ソートされるのに注意
 // vl a = {1, 3, 2, 5, 2, 3}; uniq(a); // a = {1, 2, 3, 5}
 #define all(a) (a).begin(), (a).end()
-#define sz(x) ((ll)(x).size())
+#define len(x) ((ll)(x).size())
 #define rep1(n) for(ll dummy_iter = 0LL; dummy_iter < n; ++dummy_iter) // 0,1,...,n-1
 #define rep2(i, n) for(ll i = 0LL, i##_counter = 0LL; i##_counter < ll(n); ++(i##_counter), (i) = i##_counter) // i=0,1,...,n-1
 #define rep3(i, s, t) for(ll i = ll(s), i##_counter = ll(s); i##_counter < ll(t); ++(i##_counter), (i) = (i##_counter)) // i=s,s+1,...,t-1
@@ -160,8 +160,26 @@ template <class T, class Container, class Compare> ostream &operator<<(ostream &
 #define overload_inner_output(a, b, c, d, e, f, g, h, i, ...) i
 #define out(...) overload_inner_output(__VA_ARGS__,inner_output8,inner_output7,inner_output6,inner_output5,inner_output4,inner_output3,inner_output2,inner_output1)(__VA_ARGS__)
 
-#define II(...) ll __VA_ARGS__; read(__VA_ARGS__)
-#define SI(...) string __VA_ARGS__; read(__VA_ARGS__)
-#define CI(...) char __VA_ARGS__; read(__VA_ARGS__)
-#define DI(...) double __VA_ARGS__; read(__VA_ARGS__)
-#define LI(name,size); vector<ll> name(size); read(name)
+#define ii(...) ll __VA_ARGS__; read(__VA_ARGS__)
+#define si(...) string __VA_ARGS__; read(__VA_ARGS__)
+#define ci(...) char __VA_ARGS__; read(__VA_ARGS__)
+#define di(...) double __VA_ARGS__; read(__VA_ARGS__)
+#define li(name,size); vector<ll> name(size); read(name)
+
+
+#ifdef LOCAL_TEST
+#define inner_debug1(a) cerr << "[DEBUG#" << __LINE__ << "] " << #a << " = " << a << endl;
+#define inner_debug2(a, b) cerr << "[DEBUG#" << __LINE__ << "] "<< #a << " = " << a << ", " << #b << " = " << b << endl;
+#define inner_debug3(a, b, c) cerr << "[DEBUG#" << __LINE__ << "] "<< #a << " = " << a << ", " << #b << " = " << b << ", " << #c << " = " << c << endl;
+#define inner_debug4(a, b, c, d) cerr << "[DEBUG#" << __LINE__ << "] "<< #a << " = " << a << ", " << #b << " = " << b << ", " << #c << " = " << c << ", " << #d << " = " << d << endl;
+#define inner_debug5(a, b, c, d, e) cerr << "[DEBUG#" << __LINE__ << "] "<< #a << " = " << a << ", " << #b << " = " << b << ", " << #c << " = " << c << ", " << #d << " = " << d << ", " << #e << " = " << e << endl;
+#define inner_debug6(a, b, c, d, e, f) cerr << "[DEBUG#" << __LINE__ << "] "<< #a << " = " << a << ", " << #b << " = " << b << ", " << #c << " = " << c << ", " << #d << " = " << d << ", " << #e << " = " << e << ", " << #f << " = " << f << endl;
+#define inner_debug7(a, b, c, d, e, f, g) cerr << "[DEBUG#" << __LINE__ << "] "<< #a << " = " << a << ", " << #b << " = " << b << ", " << #c << " = " << c << ", " << #d << " = " << d << ", " << #e << " = " << e << ", " << #f << " = " << f << ", " << #g << " = " << g << endl;
+#define inner_debug8(a, b, c, d, e, f, g, h) cerr << "[DEBUG#" << __LINE__ << "] "<< #a << " = " << a << ", " << #b << " = " << b << ", " << #c << " = " << c << ", " << #d << " = " << d << ", " << #e << " = " << e << ", " << #f << " = " << f << ", " << #g << " = " << g << ", " << #h << " = " << h << endl;
+
+#define overload_inner_debug(a, b, c, d, e, f, g, h, i, ...) i
+#define debug(...) overload_inner_debug(__VA_ARGS__,inner_debug8,inner_debug7,inner_debug6,inner_debug5,inner_debug4,inner_debug3,inner_debug2,inner_debug1)(__VA_ARGS__)
+
+#else
+#define debug(...);
+#endif // LOCAL_TEST
