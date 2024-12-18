@@ -2,4 +2,4 @@
 
 SOURCE_FILE="${1:-Main.cpp}"
 
-g++ -fsanitize=undefined -Wall -I./ $SOURCE_FILE
+g++ -fsanitize=undefined -Wall -DLOCAL_TEST -I./ $SOURCE_FILE
