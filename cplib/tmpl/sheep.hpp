@@ -53,6 +53,7 @@ struct Nyan { Nyan() { cin.tie(nullptr); ios::sync_with_stdio(false); cout << fi
 // vl a = {1, 3, 2, 5, 2, 3}; uniq(a); // a = {1, 2, 3, 5}
 #define all(a) (a).begin(), (a).end()
 #define len(x) ((ll)(x).size())
+#define sz(x) ((ll)(x).size())
 #define rep1(n) for(ll dummy_iter = 0LL; dummy_iter < n; ++dummy_iter) // 0,1,...,n-1
 #define rep2(i, n) for(ll i = 0LL, i##_counter = 0LL; i##_counter < ll(n); ++(i##_counter), (i) = i##_counter) // i=0,1,...,n-1
 #define rep3(i, s, t) for(ll i = ll(s), i##_counter = ll(s); i##_counter < ll(t); ++(i##_counter), (i) = (i##_counter)) // i=s,s+1,...,t-1
@@ -131,11 +132,6 @@ template <typename T> ostream &operator<<(ostream &os, deque<T> q) { while (q.si
 template <class T, class Container, class Compare> ostream &operator<<(ostream &os, priority_queue<T, Container, Compare> pq) { while (pq.size()) { os << pq.top() << " "; pq.pop(); } return os; }
 #define dout(x) cout << fixed << setprecision(10) << x << endl
 
-#define rep1(n) for(ll dummy_iter = 0LL; dummy_iter < n; ++dummy_iter) // 0,1,...,n-1
-#define rep2(i, n) for(ll i = 0LL, i##_counter = 0LL; i##_counter < ll(n); ++(i##_counter), (i) = i##_counter) // i=0,1,...,n-1
-#define rep3(i, s, t) for(ll i = ll(s), i##_counter = ll(s); i##_counter < ll(t); ++(i##_counter), (i) = (i##_counter)) // i=s,s+1,...,t-1
-#define rep4(i, s, t, step) for(ll i##_counter = step > 0 ? ll(s) : -ll(s), i##_end = step > 0 ? ll(t) : -ll(t), i##_step = abs(step), i = ll(s); i##_counter < i##_end; i##_counter += i##_step, i = step > 0 ? i##_counter : -i##_counter) // i=s,s+step,...,<t
-
 #define read1(a) cin >> a;
 #define read2(a, b) cin >> a >> b;
 #define read3(a, b, c) cin >> a >> b >> c;
@@ -165,6 +161,7 @@ template <class T, class Container, class Compare> ostream &operator<<(ostream &
 #define ci(...) char __VA_ARGS__; read(__VA_ARGS__)
 #define di(...) double __VA_ARGS__; read(__VA_ARGS__)
 #define li(name,size); vector<ll> name(size); read(name)
+#define lli(name,H,W); vector name(H,vector<ll>(W));rep(i,H) cin >> name[i];
 
 
 #ifdef LOCAL_TEST
@@ -183,3 +180,11 @@ template <class T, class Container, class Compare> ostream &operator<<(ostream &
 #else
 #define debug(...);
 #endif // LOCAL_TEST
+
+
+inline ll ctz(ll x) { return __builtin_ctzll(x);}
+inline ll clz(ll x) { return __builtin_clzll(x);}
+inline ll popcount(ll x) { return __builtin_popcountll(x);}
+inline bool inrange(ll x, ll a, ll b) { return a <= x && x < b; }
+template <typename T> inline ll findll(vector<T>& v, T x) { auto tmp = find(all(v), x);if(tmp == v.end()){return -1;}else{return distance(v.begin(),tmp); }}
+inline ll findll(string& s, char x) { auto tmp = find(all(s), x);if(tmp == s.end()){return -1;}else{return distance(s.begin(),tmp); }}
