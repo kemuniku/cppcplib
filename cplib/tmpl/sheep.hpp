@@ -144,6 +144,18 @@ template <class T, class Container, class Compare> ostream &operator<<(ostream &
 #define overload_read(a, b, c, d, e, f, g, h, i, ...) i
 #define read(...) overload_read(__VA_ARGS__,read8,read7,read6,read5,read4,read3,read2,read1)(__VA_ARGS__)
 
+#ifdef LOCAL_TEST
+#define inner_output1(a) cout << a << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << a << endl;
+#define inner_output2(a, b) cout << a << " " << b << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << a << " " <<b << endl;
+#define inner_output3(a, b, c) cout << a << " " << b << " " << c << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << a << " " << b << " " << c << endl;
+#define inner_output4(a, b, c, d) cout << a << " " << b << " " << c << " " << d << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << a << " " << b << " " << c << " " << d << endl;
+#define inner_output5(a, b, c, d, e) cout << a << " " << b << " " << c << " " << d << " " << e << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << a << " " << b << " " << c << " " << d << " " << e << endl;
+#define inner_output6(a, b, c, d, e, f) cout << a << " " << b << " " << c << " " << d << " " << e << " " << f << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << a << " " << b << " " << c << " " << d << " " << e << " " << f << endl;
+#define inner_output7(a, b, c, d, e, f, g) cout << a << " " << b << " " << c << " " << d << " " << e << " " << f << " " << g << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << a << " " << b << " " << c << " " << d << " " << e << " " << f << " " << g << endl;
+#define inner_output8(a, b, c, d, e, f, g, h) cout << a << " " << b << " " << c << " " << d << " " << e << " " << f << " " << g << " " << h << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << a << " " << b << " " << c << " " << d << " " << e << " " << f << " " << g << " " << h << endl;
+
+#else
+
 #define inner_output1(a) cout << a << endl;
 #define inner_output2(a, b) cout << a << " " << b << endl;
 #define inner_output3(a, b, c) cout << a << " " << b << " " << c << endl;
@@ -153,6 +165,7 @@ template <class T, class Container, class Compare> ostream &operator<<(ostream &
 #define inner_output7(a, b, c, d, e, f, g) cout << a << " " << b << " " << c << " " << d << " " << e << " " << f << " " << g << endl;
 #define inner_output8(a, b, c, d, e, f, g, h) cout << a << " " << b << " " << c << " " << d << " " << e << " " << f << " " << g << " " << h << endl;
 
+#endif
 #define overload_inner_output(a, b, c, d, e, f, g, h, i, ...) i
 #define out(...) overload_inner_output(__VA_ARGS__,inner_output8,inner_output7,inner_output6,inner_output5,inner_output4,inner_output3,inner_output2,inner_output1)(__VA_ARGS__)
 
