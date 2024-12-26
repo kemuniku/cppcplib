@@ -12,6 +12,7 @@ using namespace std;
 // ★★★★★ 型名を短くする、ちょっと嬉しい
 using ll = long long;
 using i128 = __int128_t;
+using str = string;
 using pii = pair<int, int>; using pll = pair<ll, ll>;
 using vi = vector<int>;  using vvi = vector<vi>; using vvvi = vector<vvi>;
 using vl = vector<ll>;  using vvl = vector<vl>; using vvvl = vector<vvl>;
@@ -222,3 +223,71 @@ inline bool inrange(ll x, ll a, ll b) { return a <= x && x < b; }
 template <typename T> inline ll findll(vector<T>& v, T x) { auto tmp = find(all(v), x);if(tmp == v.end()){return -1;}else{return distance(v.begin(),tmp); }}
 inline ll findll(string& s, char x) { auto tmp = find(all(s), x);if(tmp == s.end()){return -1;}else{return distance(s.begin(),tmp); }}
 inline ll ceildiv(ll x,ll y){return (x+y-1)/y;}
+
+
+#define allit(a,pred) [&]{repc(it,a){if(!(pred)) return false;}return true;}()
+#define anyit(a,pred) [&]{repc(it,a){if((pred)) return true;}return false;}()
+#define mapit(a, pred) ([&]() { \
+    decltype(a) res(a.size()); \
+    rep(idx,a.size()){\
+        auto it = a[idx];\
+        res[idx] = pred;\
+    }\
+    return res; \
+})()
+
+#define filterit(a, pred) ([&]() { \
+    decltype(a) res; \
+    rep(idx,a.size()){\
+        auto it = a[idx];\
+        if(pred){\
+            res.push_back(it);\
+        }\
+    }\
+    return res; \
+})()
+
+#define applyit(a, pred) { \
+    rep(idx,a.size()){\
+        auto it = a[idx];\
+        a[idx] = pred;\
+    }\
+}
+
+ll minIndex(vector<ll>& a) {
+    ll minIndex = 0;
+    rep(i, 1, sz(a)) {
+        if (a[i] < a[minIndex]) {
+            minIndex = i;
+        }
+    }
+    return minIndex;
+}
+
+ll maxIndex(vector<ll>& a) {
+    ll maxIndex = 0;
+    rep(i, 1, sz(a)) {
+        if (a[i] > a[maxIndex]) {
+            maxIndex = i;
+        }
+    }
+    return maxIndex;
+}
+
+template<typename T> vector<T> sorted(vector<T> X){
+    sort(all(X));
+    return X;
+}
+
+vector<string> split(const string& s,char c){
+    vector<string> res;
+    res.push_back("");
+    repc(a,s){
+        if(a==c){
+            res.push_back("");
+        }else{
+            res.back() += a;
+        }
+    }
+    return res;
+}
