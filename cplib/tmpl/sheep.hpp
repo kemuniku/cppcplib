@@ -11,6 +11,7 @@ using namespace std;
 
 // ★★★★★ 型名を短くする、ちょっと嬉しい
 using ll = long long;
+using i128 = __int128_t;
 using pii = pair<int, int>; using pll = pair<ll, ll>;
 using vi = vector<int>;  using vvi = vector<vi>; using vvvi = vector<vvi>;
 using vl = vector<ll>;  using vvl = vector<vl>; using vvvl = vector<vvl>;
@@ -60,7 +61,8 @@ struct Nyan { Nyan() { cin.tie(nullptr); ios::sync_with_stdio(false); cout << fi
 #define rep4(i, s, t, step) for(ll i##_counter = step > 0 ? ll(s) : -ll(s), i##_end = step > 0 ? ll(t) : -ll(t), i##_step = abs(step), i = ll(s); i##_counter < i##_end; i##_counter += i##_step, i = step > 0 ? i##_counter : -i##_counter) // i=s,s+step,...,<t
 #define overload4(a, b, c, d, e, ...) e
 #define rep(...) overload4(__VA_ARGS__, rep4, rep3, rep2, rep1)(__VA_ARGS__)
-#define repe(a, v) for(auto& a : (v)) // iterate over all elements in v
+#define repe(a, v) for(auto&& a : (v)) // iterate over all elements in v
+#define repc(a, v) for(const auto& a : (v)) // iterate over all elements in v
 #define smod(n, m) ((((n) % (m)) + (m)) % (m))
 #define sdiv(n, m) (((n) - smod(n, m)) / (m))
 #define uniq(a) {sort(all(a)); (a).erase(unique(all(a)), (a).end());}
@@ -85,14 +87,32 @@ template <class T> inline vector<T>& operator--(vector<T>& v) { repe(x, v) --x; 
 template <class T> inline vector<T>& operator++(vector<T>& v) { repe(x, v) ++x; return v; }
 
 // ★★★★ 整数pow/sqrt
-ll powm(ll a, ll n, ll mod=INFL) {
+ll powll(ll a, ll n) {
+    ll res = 1;
+    while (n > 0) {
+        if (n & 1) res = (res * a);
+        if (n > 1) a = (a * a);
+        n >>= 1;
+    }
+    return res;
+}
+ll powm32(ll a, ll n, int mod) {
     ll res = 1;
     while (n > 0) {
         if (n & 1) res = (res * a) % mod;
         if (n > 1) a = (a * a) % mod;
         n >>= 1;
     }
-    return res;
+    return res % mod;
+}
+ll powm64(i128 a,i128 n,ll mod){
+    i128 res = 1;
+    while (n > 0) {
+        if (n & 1) res = (res * a) % mod;
+        if (n > 1) a = (a * a) % mod;
+        n >>= 1;
+    }
+    return res % mod;
 }
 ll sqrtll(ll x) {
     assert(x >= 0);
@@ -201,3 +221,4 @@ inline ll popcount(ll x) { return __builtin_popcountll(x);}
 inline bool inrange(ll x, ll a, ll b) { return a <= x && x < b; }
 template <typename T> inline ll findll(vector<T>& v, T x) { auto tmp = find(all(v), x);if(tmp == v.end()){return -1;}else{return distance(v.begin(),tmp); }}
 inline ll findll(string& s, char x) { auto tmp = find(all(s), x);if(tmp == s.end()){return -1;}else{return distance(s.begin(),tmp); }}
+inline ll ceildiv(ll x,ll y){return (x+y-1)/y;}
