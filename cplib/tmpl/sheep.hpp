@@ -80,7 +80,10 @@ template<typename T, size_t N> T min(array<T, N>& a) { return *min_element(all(a
 template<typename T> T max(vector<T>& a) { return *max_element(all(a)); };
 template<typename T> T min(vector<T>& a) { return *min_element(all(a)); };
 template<typename T> vector<T> vec_slice(const vector<T>& a, int l, int r) { vector<T> rev; rep(i, l, r) rev.push_back(a[i]); return rev; };
+template<typename T> vector<T> vec_slice(const vector<T>&& a, int l, int r) { vector<T> rev; rep(i, l, r) rev.push_back(a[i]); return rev; };
 template<typename T> T sum(vector<T>& a, T zero = T(0)) { T rev = zero; rep(i, sz(a)) rev += a[i]; return rev; };
+template<typename T> T sum(vector<T>&& a, T zero = T(0)) { T rev = zero; rep(i, sz(a)) rev += a[i]; return rev; };
+
 
 // ★★★ vector の各要素を1増やす／減らす、グラフ系の入力受けでちょっと嬉しい
 // vector<ll> a = {1, 2, 4}; ++a; // a = {2, 3, 5}
@@ -227,31 +230,48 @@ inline ll ceildiv(ll x,ll y){return (x+y-1)/y;}
 
 #define allit(a,pred) [&]{repc(it,a){if(!(pred)) return false;}return true;}()
 #define anyit(a,pred) [&]{repc(it,a){if((pred)) return true;}return false;}()
+
 #define mapit(a, pred) ([&]() { \
-    decltype(a) res(a.size()); \
+    decltype(a)::value_type& it; \
+    vector<decltype(pred)> result_mapit(a.size()); \
     rep(idx,a.size()){\
-        auto it = a[idx];\
-        res[idx] = pred;\
+        it = a[idx];\
+        result_mapit[idx] = pred;\
     }\
-    return res; \
+    return result_mapit; \
 })()
 
 #define filterit(a, pred) ([&]() { \
-    decltype(a) res; \
+    decltype(a) result_filterit; \
     rep(idx,a.size()){\
-        auto it = a[idx];\
+        decltype(a)::value_type& it = a[idx];\
         if(pred){\
-            res.push_back(it);\
+            result_filterit.push_back(it);\
         }\
     }\
-    return res; \
+    return result_filterit; \
 })()
 
 #define applyit(a, pred) { \
     rep(idx,a.size()){\
-        auto it = a[idx];\
+        decltype(a)::value_type& it = a[idx];\
         a[idx] = pred;\
     }\
+}
+
+#define countit(a, pred) ([&]() { \
+    ll result_countit = 0; \
+    rep(idx,a.size()){\
+        decltype(a)::value_type& it = a[idx];\
+        if(pred){\
+            result_countit++;\
+        }\
+    }\
+    return result_countit; \
+})()
+
+#define sortByIt(a,pred) {\
+    sort(all(a),[&](const decltype(a)::value_type& left_value, const decltype(a)::value_type& right_value){auto it = left_value;auto x_value = pred;it = right_value;auto y_value = pred;return x_value<y_value;});\
 }
 
 ll minIndex(vector<ll>& a) {
