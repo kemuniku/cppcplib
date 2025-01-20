@@ -2,4 +2,4 @@
 
 SOURCE_FILE="${1:-Main.cpp}"
 
-g++ -std=c++23 -fsanitize=undefined  -ftrapv -Wall -Wextra -DLOCAL_TEST -D_GLIBCXX_DEBUG -I./ $SOURCE_FILE
+g++ -std=c++23 -fsanitize=undefined,address -fno-omit-frame-pointer -g -ftrapv -Wall -Wextra -DLOCAL_TEST -D_GLIBCXX_DEBUG -I./ $SOURCE_FILE
