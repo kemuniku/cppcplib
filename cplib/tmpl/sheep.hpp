@@ -169,26 +169,24 @@ template <class T, class Container, class Compare> ostream &operator<<(ostream &
 #define read(...) overload_read(__VA_ARGS__,read8,read7,read6,read5,read4,read3,read2,read1)(__VA_ARGS__)
 
 #ifdef LOCAL_TEST
-#define inner_output1(a) cout << a << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << a << endl;
-#define inner_output2(a, b) cout << a << " " << b << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << a << " " <<b << endl;
-#define inner_output3(a, b, c) cout << a << " " << b << " " << c << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << a << " " << b << " " << c << endl;
-#define inner_output4(a, b, c, d) cout << a << " " << b << " " << c << " " << d << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << a << " " << b << " " << c << " " << d << endl;
-#define inner_output5(a, b, c, d, e) cout << a << " " << b << " " << c << " " << d << " " << e << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << a << " " << b << " " << c << " " << d << " " << e << endl;
-#define inner_output6(a, b, c, d, e, f) cout << a << " " << b << " " << c << " " << d << " " << e << " " << f << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << a << " " << b << " " << c << " " << d << " " << e << " " << f << endl;
-#define inner_output7(a, b, c, d, e, f, g) cout << a << " " << b << " " << c << " " << d << " " << e << " " << f << " " << g << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << a << " " << b << " " << c << " " << d << " " << e << " " << f << " " << g << endl;
-#define inner_output8(a, b, c, d, e, f, g, h) cout << a << " " << b << " " << c << " " << d << " " << e << " " << f << " " << g << " " << h << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << a << " " << b << " " << c << " " << d << " " << e << " " << f << " " << g << " " << h << endl;
-
+#define inner_output1(a) cout << (a) << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << (a) << endl;
+#define inner_output2(a, b) cout << (a) << " " << (b) << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << (a) << " " << (b) << endl;
+#define inner_output3(a, b, c) cout << (a) << " " << (b) << " " << (c) << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << (a) << " " << (b) << " " << (c) << endl;
+#define inner_output4(a, b, c, d) cout << (a) << " " << (b) << " " << (c) << " " << (d) << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << (a) << " " << (b) << " " << (c) << " " << (d) << endl;
+#define inner_output5(a, b, c, d, e) cout << (a) << " " << (b) << " " << (c) << " " << (d) << " " << (e) << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << (a) << " " << (b) << " " << (c) << " " << (d) << " " << (e) << endl;
+#define inner_output6(a, b, c, d, e, f) cout << (a) << " " << (b) << " " << (c) << " " << (d) << " " << (e) << " " << (f) << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << (a) << " " << (b) << " " << (c) << " " << (d) << " " << (e) << " " << (f) << endl;
+#define inner_output7(a, b, c, d, e, f, g) cout << (a) << " " << (b) << " " << (c) << " " << (d) << " " << (e) << " " << (f) << " " << (g) << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << (a) << " " << (b) << " " << (c) << " " << (d) << " " << (e) << " " << (f) << " " << (g) << endl;
+#define inner_output8(a, b, c, d, e, f, g, h) cout << (a) << " " << (b) << " " << (c) << " " << (d) << " " << (e) << " " << (f) << " " << (g) << " " << (h) << endl;cerr << "[OUTPUT #" << __LINE__ << "] " << (a) << " " << (b) << " " << (c) << " " << (d) << " " << (e) << " " << (f) << " " << (g) << " " << (h) << endl;
 #else
 
-#define inner_output1(a) cout << a << endl;
-#define inner_output2(a, b) cout << a << " " << b << endl;
-#define inner_output3(a, b, c) cout << a << " " << b << " " << c << endl;
-#define inner_output4(a, b, c, d) cout << a << " " << b << " " << c << " " << d << endl;
-#define inner_output5(a, b, c, d, e) cout << a << " " << b << " " << c << " " << d << " " << e << endl;
-#define inner_output6(a, b, c, d, e, f) cout << a << " " << b << " " << c << " " << d << " " << e << " " << f << endl;
-#define inner_output7(a, b, c, d, e, f, g) cout << a << " " << b << " " << c << " " << d << " " << e << " " << f << " " << g << endl;
-#define inner_output8(a, b, c, d, e, f, g, h) cout << a << " " << b << " " << c << " " << d << " " << e << " " << f << " " << g << " " << h << endl;
-
+#define inner_output1(a) cout << (a) << endl;
+#define inner_output2(a, b) cout << (a) << " " << (b) << endl;
+#define inner_output3(a, b, c) cout << (a) << " " << (b) << " " << (c) << endl;
+#define inner_output4(a, b, c, d) cout << (a) << " " << (b) << " " << (c) << " " << (d) << endl;
+#define inner_output5(a, b, c, d, e) cout << (a) << " " << (b) << " " << (c) << " " << (d) << " " << (e) << endl;
+#define inner_output6(a, b, c, d, e, f) cout << (a) << " " << (b) << " " << (c) << " " << (d) << " " << (e) << " " << (f) << endl;
+#define inner_output7(a, b, c, d, e, f, g) cout << (a) << " " << (b) << " " << (c) << " " << (d) << " " << (e) << " " << (f) << " " << (g) << endl;
+#define inner_output8(a, b, c, d, e, f, g, h) cout << (a) << " " << (b) << " " << (c) << " " << (d) << " " << (e) << " " << (f) << " " << (g) << " " << (h) << endl;
 #endif
 #define overload_inner_output(a, b, c, d, e, f, g, h, i, ...) i
 #define out(...) overload_inner_output(__VA_ARGS__,inner_output8,inner_output7,inner_output6,inner_output5,inner_output4,inner_output3,inner_output2,inner_output1)(__VA_ARGS__)
@@ -202,15 +200,14 @@ template <class T, class Container, class Compare> ostream &operator<<(ostream &
 
 
 #ifdef LOCAL_TEST
-#define inner_debug1(a) cerr << "[DEBUG#" << __LINE__ << "] " << #a << " = " << a << endl;
-#define inner_debug2(a, b) cerr << "[DEBUG#" << __LINE__ << "] "<< #a << " = " << a << ", " << #b << " = " << b << endl;
-#define inner_debug3(a, b, c) cerr << "[DEBUG#" << __LINE__ << "] "<< #a << " = " << a << ", " << #b << " = " << b << ", " << #c << " = " << c << endl;
-#define inner_debug4(a, b, c, d) cerr << "[DEBUG#" << __LINE__ << "] "<< #a << " = " << a << ", " << #b << " = " << b << ", " << #c << " = " << c << ", " << #d << " = " << d << endl;
-#define inner_debug5(a, b, c, d, e) cerr << "[DEBUG#" << __LINE__ << "] "<< #a << " = " << a << ", " << #b << " = " << b << ", " << #c << " = " << c << ", " << #d << " = " << d << ", " << #e << " = " << e << endl;
-#define inner_debug6(a, b, c, d, e, f) cerr << "[DEBUG#" << __LINE__ << "] "<< #a << " = " << a << ", " << #b << " = " << b << ", " << #c << " = " << c << ", " << #d << " = " << d << ", " << #e << " = " << e << ", " << #f << " = " << f << endl;
-#define inner_debug7(a, b, c, d, e, f, g) cerr << "[DEBUG#" << __LINE__ << "] "<< #a << " = " << a << ", " << #b << " = " << b << ", " << #c << " = " << c << ", " << #d << " = " << d << ", " << #e << " = " << e << ", " << #f << " = " << f << ", " << #g << " = " << g << endl;
-#define inner_debug8(a, b, c, d, e, f, g, h) cerr << "[DEBUG#" << __LINE__ << "] "<< #a << " = " << a << ", " << #b << " = " << b << ", " << #c << " = " << c << ", " << #d << " = " << d << ", " << #e << " = " << e << ", " << #f << " = " << f << ", " << #g << " = " << g << ", " << #h << " = " << h << endl;
-
+#define inner_debug1(a) cerr << "[DEBUG#" << __LINE__ << "] " << #a << " = " << (a) << endl;
+#define inner_debug2(a, b) cerr << "[DEBUG#" << __LINE__ << "] "<< #a << " = " << (a) << ", " << #b << " = " << (b) << endl;
+#define inner_debug3(a, b, c) cerr << "[DEBUG#" << __LINE__ << "] "<< #a << " = " << (a) << ", " << #b << " = " << (b) << ", " << #c << " = " << (c) << endl;
+#define inner_debug4(a, b, c, d) cerr << "[DEBUG#" << __LINE__ << "] "<< #a << " = " << (a) << ", " << #b << " = " << (b) << ", " << #c << " = " << (c) << ", " << #d << " = " << (d) << endl;
+#define inner_debug5(a, b, c, d, e) cerr << "[DEBUG#" << __LINE__ << "] "<< #a << " = " << (a) << ", " << #b << " = " << (b) << ", " << #c << " = " << (c) << ", " << #d << " = " << (d) << ", " << #e << " = " << (e) << endl;
+#define inner_debug6(a, b, c, d, e, f) cerr << "[DEBUG#" << __LINE__ << "] "<< #a << " = " << (a) << ", " << #b << " = " << (b) << ", " << #c << " = " << (c) << ", " << #d << " = " << (d) << ", " << #e << " = " << (e) << ", " << #f << " = " << (f) << endl;
+#define inner_debug7(a, b, c, d, e, f, g) cerr << "[DEBUG#" << __LINE__ << "] "<< #a << " = " << (a) << ", " << #b << " = " << (b) << ", " << #c << " = " << (c) << ", " << #d << " = " << (d) << ", " << #e << " = " << (e) << ", " << #f << " = " << (f) << ", " << #g << " = " << (g) << endl;
+#define inner_debug8(a, b, c, d, e, f, g, h) cerr << "[DEBUG#" << __LINE__ << "] "<< #a << " = " << (a) << ", " << #b << " = " << (b) << ", " << #c << " = " << (c) << ", " << #d << " = " << (d) << ", " << #e << " = " << (e) << ", " << #f << " = " << (f) << ", " << #g << " = " << (g) << ", " << #h << " = " << (h) << endl;
 #define overload_inner_debug(a, b, c, d, e, f, g, h, i, ...) i
 #define debug(...) overload_inner_debug(__VA_ARGS__,inner_debug8,inner_debug7,inner_debug6,inner_debug5,inner_debug4,inner_debug3,inner_debug2,inner_debug1)(__VA_ARGS__)
 
@@ -225,17 +222,17 @@ inline ll popcount(ll x) { return __builtin_popcountll(x);}
 inline bool inrange(ll x, ll a, ll b) { return a <= x && x < b; }
 template <typename T> inline ll findll(vector<T>& v, T x) { auto tmp = find(all(v), x);if(tmp == v.end()){return -1;}else{return distance(v.begin(),tmp); }}
 inline ll findll(string& s, char x) { auto tmp = find(all(s), x);if(tmp == s.end()){return -1;}else{return distance(s.begin(),tmp); }}
-inline ll ceildiv(ll x,ll y){return (x+y-1)/y;}
+inline ll ceildiv(ll x,ll y){return sdiv(x+y-1,y);}
 
 
 #define allit(a,pred) [&]{repc(it,a){if(!(pred)) return false;}return true;}()
 #define anyit(a,pred) [&]{repc(it,a){if((pred)) return true;}return false;}()
 
 #define mapit(a, pred) ([&]() { \
-    decltype(a)::value_type& it; \
+    decltype(a)::value_type it; \
     vector<decltype(pred)> result_mapit(a.size()); \
     rep(idx,a.size()){\
-        it = a[idx];\
+        decltype(a)::value_type& it = a[idx];\
         result_mapit[idx] = pred;\
     }\
     return result_mapit; \
@@ -308,6 +305,14 @@ vector<string> split(const string& s,char c){
         }else{
             res.back() += a;
         }
+    }
+    return res;
+}
+
+string repeat(const string& s,int n){
+    string res;
+    rep(n){
+        res += s;
     }
     return res;
 }
