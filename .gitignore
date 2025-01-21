@@ -3,6 +3,6 @@ test.out
 makerandom.py
 combined.cpp
 Main.cpp
-.vscode
 test
 main.py
+.vscode/settings.json

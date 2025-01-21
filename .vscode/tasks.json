@@ -1,0 +1,34 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++ アクティブなファイルのビルド",
+            "command": "g++",
+            "args": [
+                "-std=c++23",
+                "-fsanitize=undefined,address",
+                "-fno-omit-frame-pointer",
+                "-g",
+                "-ftrapv",
+                "-Wall",
+                "-Wextra",
+                "-DLOCAL_TEST",
+                "-D_GLIBCXX_DEBUG",
+                "-I./",
+                "${file}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "デバッガーによって生成されたタスク。"
+        }
+    ],
+    "version": "2.0.0"
+}
