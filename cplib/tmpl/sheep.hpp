@@ -195,8 +195,8 @@ template <class T, class Container, class Compare> ostream &operator<<(ostream &
 #define si(...) string __VA_ARGS__; read(__VA_ARGS__)
 #define ci(...) char __VA_ARGS__; read(__VA_ARGS__)
 #define di(...) double __VA_ARGS__; read(__VA_ARGS__)
-#define li(name,size); vector<ll> name(size); read(name)
-#define lli(name,H,W); vector name(H,vector<ll>(W));rep(i,H) cin >> name[i];
+#define lii(name,size); vector<ll> name(size); read(name)
+#define llii(name,H,W); vector name(H,vector<ll>(W));rep(i,H) cin >> name[i];
 
 
 #ifdef LOCAL_TEST
