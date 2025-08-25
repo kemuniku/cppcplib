@@ -33,7 +33,7 @@ template <class T> using priority_queue_min = priority_queue<T, vector<T>, great
 
 // ★ 定数系、お好みで
 constexpr double PI = 3.14159265358979323;
-constexpr int INF = 100100111; constexpr ll INFL = 3300300300300300491LL;
+constexpr ll INFL = 3300300300300300491LL;
 float EPS = 1e-8; double EPSL = 1e-10;
 
 
